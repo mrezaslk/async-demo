@@ -15,6 +15,7 @@ getUser(1)
 .then((user) => getRepositories(user.githubUserName))
 .then(repos => getCommits(repos[0]))
 .then(commits => console.log('commits',commits))
+.catch(err => console.log('Error' , err.message))
 
 
 function getUser(id) {
